@@ -72,6 +72,8 @@ console.log(`List of all potential users of the draw: ${currentStudents.join(', 
 The chosen student is ${pickedStudent}.`);
 
 revengeOfBadger.clap('student1');
+revengeOfBadger.clap('student1');
+revengeOfBadger.clap('student1');
 revengeOfBadger.clap('student4');
 
 currentStudents = revengeOfBadger.trackClapping();
