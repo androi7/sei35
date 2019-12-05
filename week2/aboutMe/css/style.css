@@ -1,0 +1,22 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.listitem {
+  color: red;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  display: inline;
+  margin: 0 2rem;
+}
+
+nav {
+  height: 3rem;
+  background: black;
+  text-align: center;
+  line-height: 3rem;
+}
