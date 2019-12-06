@@ -53,9 +53,8 @@ img#firstBill {
   /* Animations! */
 }
 
-img#firstBill:hover {
-  /* border-radius: 20px; */
+/* img#firstBill:hover {
   filter: hue-rotate(360deg);
   transform: rotate(1060deg) scale(3.0);
 
-}
+} */
