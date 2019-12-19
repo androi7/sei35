@@ -1,0 +1,14 @@
+
+CREATE
+1) Blank form  -->  GET /animals/new
+2) Form submit --> POST /animals   "INSERT INTO ..."
+
+
+READ
+1) Index of items --> GET /animals   "SELECT * FROM animals;"
+2) Details of one item --> GET /animals/:id    "SELECT * FROM animals WHERE id = #{params[:id]}"
+
+
+UPDATE
+1) Pre-filled form --> GET /animals/:id/edit
+2) FORM submit --> POST /animals/:id
