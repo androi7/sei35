@@ -1,0 +1,8 @@
+ul.results li {
+  display: inline;
+  list-style-type: none;
+}
+
+.results img {
+  max-width: 120px;
+}

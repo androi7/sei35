@@ -1,0 +1,14 @@
+body {
+  background-color: rgb(37, 49, 85);
+  font-family: Helvetica, sans-serif;
+  color: rgb(182, 180, 190);
+}
+
+a, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+img {
+  max-width: 400px;
+}
