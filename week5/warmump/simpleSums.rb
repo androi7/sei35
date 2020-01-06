@@ -15,9 +15,11 @@ end
 
 class SimpleSums
 
-  def initialize number
+  def initialize( number )
     @number = number
   end
+
+  # attr_reader :number
 
   def number
     @number
