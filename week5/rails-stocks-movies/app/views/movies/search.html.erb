@@ -4,7 +4,9 @@
   <% @titles.each do |movie| %>
     <li>
       <a href="/movies/results/<%= movie['id'] %>">
-        <img src="http://image.tmdb.org/t/p/w185<%= movie['poster_path'] %>" alt="<%= movie['original_title'] %>">
+        <% if movie['poster_path'].present? %>
+          <img src="http://image.tmdb.org/t/p/w185<%= movie['poster_path'] %>" alt="<%= movie['original_title'] %>">
+        <% end %>
       </a>
     </li>
   <% end %>

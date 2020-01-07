@@ -3946,3 +3946,199 @@ Processing by MoviesController#search as HTML
 Completed 200 OK in 124ms (Views: 17.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2020-01-07 15:55:00 +1100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/gabriel/.rvm/gems/ruby-2.4.1/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gabriel/.rvm/gems/ruby-2.4.1/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 12ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for ::1 at 2020-01-07 15:55:03 +1100
+Processing by MoviesController#form as HTML
+  Rendering movies/form.html.erb within layouts/application
+  Rendered movies/form.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 210ms (Views: 206.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/titles?title=avenger" for ::1 at 2020-01-07 15:55:07 +1100
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"avenger"}
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 313ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/results/1771" for ::1 at 2020-01-07 15:55:10 +1100
+Processing by MoviesController#movie_info as HTML
+  Parameters: {"id"=>"1771"}
+  Rendering movies/movie_info.html.erb within layouts/application
+  Rendered movies/movie_info.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 496ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/titles?title=avenger" for ::1 at 2020-01-07 15:55:15 +1100
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"avenger"}
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/results/174624" for ::1 at 2020-01-07 15:55:16 +1100
+Processing by MoviesController#movie_info as HTML
+  Parameters: {"id"=>"174624"}
+  Rendering movies/movie_info.html.erb within layouts/application
+  Rendered movies/movie_info.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 506ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/titles?title=avenger" for ::1 at 2020-01-07 15:55:18 +1100
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"avenger"}
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 42ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/results/87302" for ::1 at 2020-01-07 15:55:19 +1100
+Processing by MoviesController#movie_info as HTML
+  Parameters: {"id"=>"87302"}
+  Rendering movies/movie_info.html.erb within layouts/application
+  Rendered movies/movie_info.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 528ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/titles?title=avenger" for ::1 at 2020-01-07 15:55:22 +1100
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"avenger"}
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 44ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/results/28169" for ::1 at 2020-01-07 15:55:23 +1100
+Processing by MoviesController#movie_info as HTML
+  Parameters: {"id"=>"28169"}
+  Rendering movies/movie_info.html.erb within layouts/application
+  Rendered movies/movie_info.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 497ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/titles?title=avenger" for ::1 at 2020-01-07 15:55:27 +1100
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"avenger"}
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 47ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for ::1 at 2020-01-07 15:55:28 +1100
+Processing by MoviesController#form as HTML
+  Rendering movies/form.html.erb within layouts/application
+  Rendered movies/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 23ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/titles?title=harry+potter" for ::1 at 2020-01-07 15:55:34 +1100
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"harry potter"}
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 273ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/titles?title=harry+potter" for ::1 at 2020-01-07 15:57:08 +1100
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"harry potter"}
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 59ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for ::1 at 2020-01-07 15:57:13 +1100
+Processing by MoviesController#form as HTML
+  Rendering movies/form.html.erb within layouts/application
+  Rendered movies/form.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/titles?title=harry+potter" for ::1 at 2020-01-07 15:57:18 +1100
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"harry potter"}
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 51ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/results/671" for ::1 at 2020-01-07 15:57:20 +1100
+Processing by MoviesController#movie_info as HTML
+  Parameters: {"id"=>"671"}
+  Rendering movies/movie_info.html.erb within layouts/application
+  Rendered movies/movie_info.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 531ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/titles?title=harry%20potter" for ::1 at 2020-01-07 15:57:23 +1100
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"harry potter"}
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 47ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/results/482408" for ::1 at 2020-01-07 15:57:24 +1100
+Processing by MoviesController#movie_info as HTML
+  Parameters: {"id"=>"482408"}
+  Rendering movies/movie_info.html.erb within layouts/application
+  Rendered movies/movie_info.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 498ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/titles?title=harry%20potter" for ::1 at 2020-01-07 15:57:27 +1100
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"harry potter"}
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 42ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/results/256050" for ::1 at 2020-01-07 15:57:28 +1100
+Processing by MoviesController#movie_info as HTML
+  Parameters: {"id"=>"256050"}
+  Rendering movies/movie_info.html.erb within layouts/application
+  Rendered movies/movie_info.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 538ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/titles?title=harry%20potter" for ::1 at 2020-01-07 15:57:31 +1100
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"harry potter"}
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 55ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/results/109004" for ::1 at 2020-01-07 15:57:32 +1100
+Processing by MoviesController#movie_info as HTML
+  Parameters: {"id"=>"109004"}
+  Rendering movies/movie_info.html.erb within layouts/application
+  Rendered movies/movie_info.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 500ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/titles?title=harry%20potter" for ::1 at 2020-01-07 15:57:35 +1100
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"harry potter"}
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 267ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/results/673" for ::1 at 2020-01-07 15:57:37 +1100
+Processing by MoviesController#movie_info as HTML
+  Parameters: {"id"=>"673"}
+  Rendering movies/movie_info.html.erb within layouts/application
+  Rendered movies/movie_info.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 483ms (Views: 19.6ms | ActiveRecord: 0.0ms)
+
+
