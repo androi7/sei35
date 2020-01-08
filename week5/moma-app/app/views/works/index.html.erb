@@ -1,2 +1,13 @@
-<h1>Works#index</h1>
-<p>Find me in app/views/works/index.html.erb</p>
+<h1>All Works</h1>
+
+<ul class='flex'>
+  <% @works.each do |work| %>
+    <li>
+      <a href="<%= work_path(work.id) %>">
+        <% if work.image.present? %>
+          <%= image_tag work.image, alt: work.title, class: 'work' %>
+        <% end %>
+      </a>
+    </li>
+  <% end %>
+</ul>

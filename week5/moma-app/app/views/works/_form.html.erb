@@ -6,13 +6,17 @@
   <%= f.label :year %>
   <%= f.text_field :year %>
 
-  <!-- <select name="work[artist_id]">
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <select name="work[artist_id]">
     <%= Artist.all.each do |artist| %>
       <option value="<%= artist.id %>"><%= artist.name %></option>
     <% end %>
-  </select> -->
+  </select>
 
-  <%= select "work", "artist_id", Artist.all.collect { |artist| [artist.name, artist.id] } %>
+  <%# select("work", "artist_id", Artist.all.collect { |artist| [artist.name, artist.id] }, { include_blank: false }) %>
+
 
 
 
