@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/dentist/static/css/main.d1b05096.chunk.css",
+    "main.js": "/dentist/static/js/main.43615039.chunk.js",
+    "main.js.map": "/dentist/static/js/main.43615039.chunk.js.map",
+    "runtime-main.js": "/dentist/static/js/runtime-main.1ba5c3ba.js",
+    "runtime-main.js.map": "/dentist/static/js/runtime-main.1ba5c3ba.js.map",
+    "static/js/2.33231fb2.chunk.js": "/dentist/static/js/2.33231fb2.chunk.js",
+    "static/js/2.33231fb2.chunk.js.map": "/dentist/static/js/2.33231fb2.chunk.js.map",
+    "index.html": "/dentist/index.html",
+    "precache-manifest.788b9ab68ee910dfe8f479cc33db4794.js": "/dentist/precache-manifest.788b9ab68ee910dfe8f479cc33db4794.js",
+    "service-worker.js": "/dentist/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/dentist/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.33231fb2.chunk.js.LICENSE": "/dentist/static/js/2.33231fb2.chunk.js.LICENSE",
+    "static/media/logo.svg": "/dentist/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1ba5c3ba.js",
+    "static/js/2.33231fb2.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.43615039.chunk.js"
+  ]
+}
