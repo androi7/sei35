@@ -13,6 +13,7 @@
         <option>SFO</option>
         <option>SIN</option>
         <option>JFK</option>
+        <option>MEL</option>
       </select>
       &nbsp; &nbsp;
       <label for="">Destination:</label>
@@ -22,6 +23,7 @@
         <option>SFO</option>
         <option>SIN</option>
         <option>JFK</option>
+        <option>MEL</option>
       </select>
 
       &nbsp; &nbsp;

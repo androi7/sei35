@@ -2,23 +2,31 @@
   <div>
     <h3>Search Results for {{ origin }} to {{ destination }}</h3>
 
-    <div class="container header">
-      <div>Departure Date</div>
-      <div>Flight Number</div>
-      <div>Plane</div>
-      <div>Origin</div>
-      <div>Destination</div>
+    <div v-if="flights.length === 0">
+      <p>Loading results...</p>
     </div>
 
-    <div class="container result"
-         v-for="flight in flights"
-         @click="gotoFlightDetails(flight.id)">
-      <div>{{flight.departure_date}}</div>
-      <div>{{flight.flight_number}}</div>
-      <div>{{flight.airplane.name}}</div>
-      <div>{{flight.origin}}</div>
-      <div>{{flight.destination}}</div>
-    </div>
+    <div v-else>
+      <div class="container header">
+        <div>Departure Date</div>
+        <div>Flight Number</div>
+        <div>Plane</div>
+        <div>Origin</div>
+        <div>Destination</div>
+      </div>
+
+
+      <div class="container result"
+
+           v-for="flight in flights"
+           @click="gotoFlightDetails(flight.id)">
+        <div>{{flight.departure_date_formatted}}</div>
+        <div>{{flight.flight_number}}</div>
+        <div>{{flight.airplane.name}}</div>
+        <div>{{flight.origin}}</div>
+        <div>{{flight.destination}}</div>
+      </div>
+    </div>  <!-- v-else div -->
 
   </div>
 </template>
