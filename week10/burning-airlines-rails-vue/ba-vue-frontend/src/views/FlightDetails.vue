@@ -1,16 +1,24 @@
 <template>
   <div>
     <!-- better: {{flight.airplane && flight.airplane.name}} -->
-    <h1>Flight ID: {{ flight.flight_number }} ({{flight.airplane.name}})</h1>
+    <h1>Flight ID: {{ flight.flight_number }} ({{flight.airplane && flight.airplane.name}})</h1>
+
+    <ReservationConfirm
+      v-if="seat.row && seat.col"
+      :selectedSeat="seat"
+      :flightID="id"
+      :userID="userID"
+      @seatConfirmed="seatBooked"
+     />
 
     <div class="seating" v-if="flight.airplane">
       <div class="planeRow" v-for="row in flight.airplane.rows">
         {{ row }}
         <div class="seat"
-             v-bind:class="seatStatus(row, col)"
+             v-bind:class="[seatStatus(row, col), selectedSeat(row, col)]"
+             @click="selectSeat(col, row)"
              v-for="col in flight.airplane.cols">
-
-          {{ col | toSeatLetter | }}
+          {{ col | toSeatLetter  }}
         </div><!-- seat -->
         {{ row }}
       </div><!-- planeRow -->
@@ -20,19 +28,36 @@
 
 <script>
   import axios from 'axios';
+  import ReservationConfirm from '@/components/ReservationConfirm.vue';
+
+  const FAKE_CURRENT_USER_ID = 13;  // TODO: implement login system with knock/jwt
 
   export default {
     name: 'FlightDetails',
     props: ['id'],  // comes from the router,
+    components: {
+      ReservationConfirm  // FlightDetails will render this one as a child
+    },
     data() {
       return {
-        flight: {}
+        flight: {},
+        reservations: {},
+        user_reservations: {},
+        seat: {
+          row: 0,
+          col: 0
+        },
+        userID: FAKE_CURRENT_USER_ID
       };
     },
     mounted() {
       // Load the details for this flight ID
       axios.get(`http://localhost:3000/flights/${this.id}`)
-        .then(res => this.flight = res.data)
+        .then(res => {
+          this.flight = res.data.flight;
+          this.reservations = res.data.reservations;
+          this.user_reservations = res.data.user_reservations;
+        })
         .catch(err => console.log(err));
     },
     methods: {
@@ -40,13 +65,72 @@
         // Loop over the reservations for this flight, and return an 'occupied' class name
         // if we find this row + col as a reservation; otherwise return 'free'
         // return Math.random() > 0.5 ? 'occupied' : 'free';
-        let found = false;
-        this.flight.reservations.forEach( r => {
-          if (r.row === row && r.col === col) {
-            found = true;
-          }
-        });
-        return found ? 'occupied' : 'free';
+
+        // let found = false;
+        // this.flight.reservations.forEach( r => {
+        //   if (r.row === row && r.col === col) {
+        //     found = true;
+        //   }
+        // });
+        // return found ? 'occupied' : 'free';
+
+        // const found = this.flight.reservations.some( r => r.row === row && r.col === col );
+        // return found ? 'occupied' : 'free';
+
+        // for (let i = 0; i < this.flight.reservations.length; i++) {
+        //   const r = this.flight.reservations[i];
+        //
+        //   // Does the seat we are currently checking correspond to this reservation 'r'
+        //   if ( r.row === row && r.col === col ) {
+        //
+        //     // if (r.user_id === FAKE_CURRENT_USER_ID) {
+        //     //   return 'booked';  // This resevation belongs to the logged-in user
+        //     // } else {
+        //     //   return 'occupied';
+        //     // }
+        //
+        //     return r.user_id === FAKE_CURRENT_USER_ID ? 'booked' : 'occupied';
+        //   }
+        // }  // for
+
+        const seatKey = `${row}-${col}`;
+
+        if (seatKey in this.user_reservations) {
+          return 'booked';
+        } else if (seatKey in this.reservations) {
+          return 'occupied';
+        } else {
+          return 'free';
+        }
+
+        // return 'free';
+
+      },  // seatStatus()
+      selectSeat(col, row) {
+        console.log('selectSeat()', row, col);
+
+        // this.seat.row = row;
+        // this.seat.col = col;
+        this.seat = { row, col };
+      },
+      selectedSeat(row, col) {
+        return (row  === this.seat.row && col === this.seat.col) && 'selected';
+      },
+      seatBooked( reservation ) {
+        console.log('new reservation', reservation);
+
+        // Add to the list of reservations for this
+        // flight in state, so it will appear as
+        // booked by us immediately in the seating
+        // diagram
+
+        this.user_reservations[`${reservation.row}-${reservation.col}`] = 1;
+
+        // Stop the ReservationConfirm component
+        // from appearing, and stop the selected
+        // seat from appearing green
+        this.seat = { row: 0, col: 0 };
+
       }
     },
     // Filters are like Rails template helpers, intended just for transforming text in your template
@@ -59,6 +143,11 @@
 </script>
 
 <style scoped>
+  .selected {
+    background-color: lightgreen;
+    border: 1px solid lime;
+  }
+
   .seat {
     display: inline-block;
     width: 40px;
@@ -76,7 +165,14 @@
     pointer-events: none;  /* Ignore clicks on occupied seats! */
   }
 
-  .free {
+  .booked {
+    background-color: orange;
+    pointer-events: none;
+  }
 
+
+
+  .free {
+    cursor: pointer;
   }
 </style>

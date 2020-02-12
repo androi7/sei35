@@ -5,6 +5,35 @@ class FlightsController < ApplicationController
 
   def show
     # render flight by ID, include reservations, include airplane rows & cols
+    flight = Flight.find params[:id]
+
+    # sleep 2
+
+    # Create a hash whose keys look like 'row:col' with a value of true for
+    # each booked seat
+    # reservations = ...
+    reservations_lookup = {}
+    user_reservations_lookup = {}
+
+    fake_current_user_id = 13  # use current_user in a real system with working auth
+
+    flight.reservations.each do |res|
+      if res.user_id == fake_current_user_id
+        user_reservations_lookup["#{res.row}-#{res.col}"] = 1
+      else
+        reservations_lookup["#{res.row}-#{res.col}"] = 1
+      end
+    end
+
+    render json: {
+        flight: flight,
+        reservations: reservations_lookup,
+        user_reservations: user_reservations_lookup
+      },
+      include: {
+        airplane: { only: [:name, :rows, :cols]}
+    }
+
   end
 
   def search
@@ -12,7 +41,13 @@ class FlightsController < ApplicationController
       origin: params[:origin],
       destination: params[:destination]
     )
-    render json: results, include: {airplane: { only: [:name] } },
-    except: [ :created_at, :updated_at ]
+
+    sleep 3  # Fake a slow network connection
+
+    render json: results, include: {
+      airplane: { only: [:name] }
+    },
+    except: [ :created_at, :updated_at ],
+    methods: [ :departure_date_formatted ]
   end
 end
