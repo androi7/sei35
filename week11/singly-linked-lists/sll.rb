@@ -80,19 +80,40 @@ class SinglyLinkedList
     # Find the specified node, and add a new node
     # with the given value between that found node
     # and the next
+    node = find node
+    node_after = node.next
+    node_inserted = Node.new value
+    node.next = node_inserted
+    node_inserted.next = node_after
+    node_inserted 
   end
 
   def find( needle )
     # Return the node whose value == needle
+    node = @head
+    while node
+      return node if node.value == needle
+      node = node.next
+    end
+    node = -1
   end
 
   def at_index( index )
     # Return the node at the specified index
     # AKA array indexing!
+    return @head if index == 0
+    node = @head
+    index.times do
+      node = node.next 
+      return node if node
+    end
+    node = -1
   end
 
   def reverse
     # return a reversed version of the list
+    new_list = Node.new @head
+    
   end
 
   def reverse!
