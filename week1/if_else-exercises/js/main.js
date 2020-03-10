@@ -11,7 +11,12 @@ console.log(`The greater number of 5 and 10 is ${greaterNum(5,10)}`);
 console.log(`The greater number of 8 and 3 is ${greaterNum(8,3)}`);
 
 
-/***** The World Translator *****/
+/* ## The World Translator
+Write a function named helloWorld that:
+- takes 1 argument, a language code (e.g. "es", "de", "en")
+- returns "Hello, World" for the given language, for atleast 3 languages. It should default to returning English.
+- Call that function for each of the supported languages and log the result to make sure it works.
+*/
 const helloWorld = function (lang = 'en') {
   if (lang === 'en') {
     return "Hello, World";
@@ -57,32 +62,15 @@ Write a function named pluralize that:
 - returns the number and pluralized form, like "5 cats" or "1 dog".
 - Call that function for a few different scores and log the result to make sure it works.
 */
-const pluralize = function (number, noun) {
-  let singleOutput = `${Math.floor(number)} ${noun}`;
-  let multiOutput = `${Math.floor(number)} ${noun}s`;
-
-  for (let i = 0; i < arguments.length; i++) {
-    if (i > 1) {
-      if (number > 1) {
-        multiOutput += `, ${arguments[i]}s`;
-      } else if (number === 1 || number === 0) {
-        singleOutput += `, ${arguments[i]}`;
-      }
-    }
-  }
-
-  if (number > 1) {
-    return multiOutput;
-  } else if (number === 1 || number === 0) {
-    return singleOutput;
+const pluralize = function (noun, number) {
+  const message = `${ number } ${ noun }`;
+  if (1 === number) {
+    return message;
   } else {
-    return `Number needs to be a positive Integer or zero`;
+    return message + 's';
   }
 };
 
-console.log(pluralize(1, 'dog'));
-console.log(pluralize(5, 'cat'));
-console.log(pluralize(0, 'cat', 'dog', 'cow'));
-console.log(pluralize(3, 'cat', 'dog', 'cow'));
-console.log(pluralize(-2, 'cat'));
-console.log(pluralize(2.4, 'dog'));
+console.log( pluralize('cat', 5) );
+console.log( pluralize('dog', 1) );
+console.log( pluralize('turtle', 0) );

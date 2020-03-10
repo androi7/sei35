@@ -40,7 +40,7 @@ const books = [
 
 for(let i = 0; i < books.length; i++) {
   let book = books[i];
-  let read = book.alreadyRead ? 'You already read' : 'You still need to read';
+  let read = book.alreadyRead ? 'You have already read' : 'You still need to read';
   console.log(`${read} "${book.title}" by ${book.author}.`);
 }
 

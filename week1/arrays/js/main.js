@@ -1,3 +1,9 @@
+// Your top choices
+// Create an array to hold your top five choices of something (colors, presidents, whatever). If you choose movies, the right top choice is "Satantango".
+//
+// For each choice, log to the screen a string like: "My #1 choice is blue."
+// Bonus: Change it to log "My 1st choice, "My 2nd choice", "My 3rd choice", picking the right suffix for the number.
+
 const presidents = ['Ronald Reagan', 'Jimmy Carter', 'Richard Nixon', 'John F. Kennedy', 'George Washington'];
 
 // for (let i = 0; i < presidents.length; i++) {
@@ -13,10 +19,6 @@ const presidents = ['Ronald Reagan', 'Jimmy Carter', 'Richard Nixon', 'John F. K
 //     suffix = 'th';
 //   }
 //   console.log(`My ${i+1}${suffix} choice is ${presidents[i]}`);
-// }
-//
-// for (let item in presidents) {
-//   console.log(`For/in - Loop: My #${parseInt(item)+1} choice is ${presidents[item]}. (index: ${item})`);
 // }
 //
 // for (let item of presidents)  {
