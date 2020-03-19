@@ -3,13 +3,18 @@ html {
   padding: 0;
 }
 
+body {
+  margin: 0;
+}
+
 .listitem {
   color: red;
+  list-style-type: none;
 }
 
 a {
   text-decoration: none;
-  color: white;
+  color: gray;
   display: inline;
   margin: 0 2rem;
 }

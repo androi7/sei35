@@ -1,0 +1,246 @@
+  [1m[35m (247.8ms)[0m  [1m[35mCREATE DATABASE "badger-vision_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (105.1ms)[0m  [1m[35mCREATE DATABASE "badger-vision_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (26.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1552544075577196800)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateAnimals (20200114033416)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "animals" ("id" bigserial primary key, "name" character varying, "image" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200114033416_create_animals.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200114033416"]]
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreatePets (20200114033754)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "pets" ("id" bigserial primary key, "name" character varying, "image" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200114033754_create_pets.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200114033754"]]
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-14 03:38:39.468565"], ["updated_at", "2020-01-14 03:38:39.468565"]]
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1552544075577196800)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/" for ::1 at 2020-01-14 15:49:28 +1100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gabriel/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by PetsController#new as HTML
+  Rendering pets/new.html.erb within layouts/application
+  Rendered pets/new.html.erb within layouts/application (28.3ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 5.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `Name' for #<Pet:0x007fe48bb6e988>
+Did you mean?  name=
+               name?):
+    2: 
+    3: <%= form_for @pet, :html => {:multipart => true} do |f| %>
+    4:   <%= f.label "Pet Name: " %>
+    5:   <%= f.text_field :Name %>
+    6: 
+    7:   <%= f.label "Pet Image: " %>
+    8:   <%= f.cl_image_upload :image %>
+  
+app/views/pets/new.html.erb:5:in `block in _app_views_pets_new_html_erb___3878456189267682961_70309790746780'
+app/views/pets/new.html.erb:3:in `_app_views_pets_new_html_erb___3878456189267682961_70309790746780'
+Started GET "/" for ::1 at 2020-01-14 15:49:42 +1100
+Processing by PetsController#new as HTML
+  Rendering pets/new.html.erb within layouts/application
+  Rendered pets/new.html.erb within layouts/application (315.6ms)
+Completed 200 OK in 896ms (Views: 891.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-01-14 15:51:12 +1100
+Processing by PetsController#new as HTML
+  Rendering pets/new.html.erb within layouts/application
+  Rendered pets/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 31ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pets" for ::1 at 2020-01-14 15:52:15 +1100
+Processing by PetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cEZb1VUVN3LCsCu5wZ3XQcluham4xCCHNgVzwYJK8c36vRcVg0cwFBFeriw0XKmOaAMNwGpNYGf5NMY1zlw4lQ==", "pet"=>{"name"=>"Rocky"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007fe48b694ed0 @tempfile=#<Tempfile:/var/folders/k1/qrsjxnkn6q39nggvsy35rq7c0000gn/T/RackMultipart20200114-36898-u4j60r.jpg>, @original_filename="dogggy.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"dogggy.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Create Pet"}
+Completed 500 Internal Server Error in 60037ms (ActiveRecord: 0.0ms)
+
+
+  
+RestClient::Exceptions::OpenTimeout (Timed out connecting to server):
+  
+app/controllers/pets_controller.rb:17:in `create'
+Started POST "/pets" for ::1 at 2020-01-14 15:55:37 +1100
+Processing by PetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cEZb1VUVN3LCsCu5wZ3XQcluham4xCCHNgVzwYJK8c36vRcVg0cwFBFeriw0XKmOaAMNwGpNYGf5NMY1zlw4lQ==", "pet"=>{"name"=>"Rocky"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007fe48c3a0ac0 @tempfile=#<Tempfile:/var/folders/k1/qrsjxnkn6q39nggvsy35rq7c0000gn/T/RackMultipart20200114-36898-1i1e0wa.jpg>, @original_filename="dogggy.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"dogggy.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Create Pet"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pets_controller.rb:20
+  [1m[36mPet Create (4.4ms)[0m  [1m[32mINSERT INTO "pets" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Rocky"], ["created_at", "2020-01-14 04:55:37.869046"], ["updated_at", "2020-01-14 04:55:37.869046"]]
+  ↳ app/controllers/pets_controller.rb:20
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pets_controller.rb:20
+Redirected to http://localhost:3000/pets/1
+Completed 302 Found in 28ms (ActiveRecord: 15.3ms)
+
+
+Started GET "/pets/1" for ::1 at 2020-01-14 15:55:37 +1100
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (1.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:7
+  Rendering pets/show.html.erb within layouts/application
+  Rendered pets/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 21.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/pets/1" for ::1 at 2020-01-14 15:55:41 +1100
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:7
+  Rendering pets/show.html.erb within layouts/application
+  Rendered pets/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 21ms (Views: 16.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pets/1" for ::1 at 2020-01-14 15:55:43 +1100
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:7
+  Rendering pets/show.html.erb within layouts/application
+  Rendered pets/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 23ms (Views: 18.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pets/1" for ::1 at 2020-01-14 15:57:12 +1100
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:7
+  Rendering pets/show.html.erb within layouts/application
+  Rendered pets/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 17.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/pets/1" for ::1 at 2020-01-14 15:57:13 +1100
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:7
+  Rendering pets/show.html.erb within layouts/application
+  Rendered pets/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 17.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-01-14 15:57:16 +1100
+Processing by PetsController#new as HTML
+  Rendering pets/new.html.erb within layouts/application
+  Rendered pets/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 31ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pets" for ::1 at 2020-01-14 15:57:24 +1100
+Processing by PetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+I5yvEbtO4REtpZU5UCVewx4ZFR1liMlm+r49pZQ5g5ydT58kL884pdYE8EQgeu0rRXsPacfY8VU200C2kYvVg==", "pet"=>{"name"=>"Rocky"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007fe492141f08 @tempfile=#<Tempfile:/var/folders/k1/qrsjxnkn6q39nggvsy35rq7c0000gn/T/RackMultipart20200114-36898-v62t6v.jpg>, @original_filename="dogggy.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"dogggy.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Create Pet"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pets_controller.rb:20
+  [1m[36mPet Create (1.5ms)[0m  [1m[32mINSERT INTO "pets" ("name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Rocky"], ["image", "xftlhyfgg31rne5m1esy"], ["created_at", "2020-01-14 04:57:26.485219"], ["updated_at", "2020-01-14 04:57:26.485219"]]
+  ↳ app/controllers/pets_controller.rb:20
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pets_controller.rb:20
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 2233ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/pets/2" for ::1 at 2020-01-14 15:57:26 +1100
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:7
+  Rendering pets/show.html.erb within layouts/application
+  Rendered pets/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 50ms (Views: 44.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-01-14 15:58:56 +1100
+Processing by PetsController#new as HTML
+  Rendering pets/new.html.erb within layouts/application
+  Rendered pets/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 27ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pets" for ::1 at 2020-01-14 15:59:12 +1100
+Processing by PetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bioCjAKHdFxu8Ap2Pyy70PgVdBFbvwosvZIS+1IqC0rk0U5M1NVzOr0ej+PK7cUfWXj8eIk2Ssxyo6cPHjzCEg==", "pet"=>{"name"=>"fb"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007fe4898db128 @tempfile=#<Tempfile:/var/folders/k1/qrsjxnkn6q39nggvsy35rq7c0000gn/T/RackMultipart20200114-36898-11cgk3r.png>, @original_filename="facebook.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"facebook.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Create Pet"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pets_controller.rb:20
+  [1m[36mPet Create (2.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "fb"], ["image", "kaavdhnlmyqduodxh3q8"], ["created_at", "2020-01-14 04:59:13.989891"], ["updated_at", "2020-01-14 04:59:13.989891"]]
+  ↳ app/controllers/pets_controller.rb:20
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pets_controller.rb:20
+Redirected to http://localhost:3000/pets/3
+Completed 302 Found in 1316ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/pets/3" for ::1 at 2020-01-14 15:59:14 +1100
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:7
+  Rendering pets/show.html.erb within layouts/application
+  Rendered pets/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 22ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-01-14 16:01:44 +1100
+Processing by PetsController#new as HTML
+  Rendering pets/new.html.erb within layouts/application
+  Rendered pets/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 55ms (Views: 27.7ms | ActiveRecord: 12.9ms)
+
+
+Started POST "/pets" for ::1 at 2020-01-14 16:02:08 +1100
+Processing by PetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KnhNIxVHmg9gAv8L4uC8xSPf1+EbF1l5iliiII0u4O2ggwHjwxWdabPsep4XIcIKgrJfiMmeGZlFaRfUwTgptQ==", "pet"=>{"name"=>"slack"}, "file"=>#<ActionDispatch::Http::UploadedFile:0x007fe48b6cbdb8 @tempfile=#<Tempfile:/var/folders/k1/qrsjxnkn6q39nggvsy35rq7c0000gn/T/RackMultipart20200114-36898-1eql672.png>, @original_filename="slack-2014-10-07.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"slack-2014-10-07.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Create Pet"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pets_controller.rb:20
+  [1m[36mPet Create (1.0ms)[0m  [1m[32mINSERT INTO "pets" ("name", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "slack"], ["image", "fnq9qmw2mxlobvchch5v"], ["created_at", "2020-01-14 05:02:10.594863"], ["updated_at", "2020-01-14 05:02:10.594863"]]
+  ↳ app/controllers/pets_controller.rb:20
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pets_controller.rb:20
+Completed 500 Internal Server Error in 2293ms (ActiveRecord: 1.8ms)
+
+
+  
+RuntimeError (hell):
+  
+app/controllers/pets_controller.rb:21:in `create'
+Started PUT "/__web_console/repl_sessions/37977e029953ea4f3fb9fa6da4dd7288" for ::1 at 2020-01-14 16:02:13 +1100
+Started PUT "/__web_console/repl_sessions/37977e029953ea4f3fb9fa6da4dd7288" for ::1 at 2020-01-14 16:02:14 +1100
+Started PUT "/__web_console/repl_sessions/37977e029953ea4f3fb9fa6da4dd7288" for ::1 at 2020-01-14 16:02:17 +1100
+Started PUT "/__web_console/repl_sessions/37977e029953ea4f3fb9fa6da4dd7288" for ::1 at 2020-01-14 16:02:17 +1100
+Started PUT "/__web_console/repl_sessions/37977e029953ea4f3fb9fa6da4dd7288" for ::1 at 2020-01-14 16:02:22 +1100
+Started PUT "/__web_console/repl_sessions/37977e029953ea4f3fb9fa6da4dd7288" for ::1 at 2020-01-14 16:02:24 +1100
+Started PUT "/__web_console/repl_sessions/37977e029953ea4f3fb9fa6da4dd7288" for ::1 at 2020-01-14 16:02:36 +1100
+Started PUT "/__web_console/repl_sessions/37977e029953ea4f3fb9fa6da4dd7288" for ::1 at 2020-01-14 16:02:38 +1100
+Started PUT "/__web_console/repl_sessions/37977e029953ea4f3fb9fa6da4dd7288" for ::1 at 2020-01-14 16:02:42 +1100
+Started PUT "/__web_console/repl_sessions/37977e029953ea4f3fb9fa6da4dd7288" for ::1 at 2020-01-14 16:03:09 +1100
+Started PUT "/__web_console/repl_sessions/37977e029953ea4f3fb9fa6da4dd7288" for ::1 at 2020-01-14 16:03:21 +1100

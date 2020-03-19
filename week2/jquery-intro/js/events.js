@@ -1,9 +1,9 @@
 $(document).ready( function() {
   $('body').append($('<p id="newP">You pressed: </p>'));
   $('input[type=text]').on('keydown', function(e) {
-    $(e.target).css('color','gray');
+    $(e.target).css('color','red');
   }).on('keyup', function(e) {
-    $(e.target).css('color', 'green');
+    $(this).css('color', 'green');
   }).on('keypress', function(e) {
     console.log('you pressed', String.fromCharCode(e.keyCode));
     let content = $('#newP').html();
@@ -29,14 +29,15 @@ $(document).ready( function() {
   $('#kitty').on('click', function(ev) {
     console.log(ev);
     $(this).css({'filter': 'drop-shadow(16px 16px 20px red) invert(75%)'});
-  }).on('mousemove', function(ev) {
+  }).on('mouseenter', function(ev) {
     blurFactor++;
     //$(this).css({'filter': `blur(${blurFactor/10}px)`});
-    $('body').css({'filter': `blur(${blurFactor/10}px)`});
+    $(this).css({'filter': `blur(${blurFactor}px)`});
   });
 
   $('#toggle').on('click', function() {
-    $('.triple-kitty1').eq(0).toggle();
+    $('.triple-kitty1').toggle();
+
   });
 
   $('#fade').on('click', function() {
@@ -59,6 +60,7 @@ $(document).ready( function() {
   });
 
 
+/*
   $('#kitty').css({
     position: 'relative',
     left: 0
@@ -72,5 +74,5 @@ $(document).ready( function() {
     function() {
       console.log('animation complete!');
   });
-
+*/
 });

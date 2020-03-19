@@ -3,6 +3,12 @@
     <!-- better: {{flight.airplane && flight.airplane.name}} -->
     <h1>Flight ID: {{ flight.flight_number }} ({{flight.airplane && flight.airplane.name}})</h1>
 
+
+    <div v-if="showConfirmationMessage.row" class="confirmationMessage">
+      Your reservation was booked successfully.<br>
+      Your seat is {{ showConfirmationMessage.row }}{{ showConfirmationMessage.col | toSeatLetter }}.
+    </div>
+
     <ReservationConfirm
       v-if="seat.row && seat.col"
       :selectedSeat="seat"
@@ -12,7 +18,7 @@
      />
 
     <div class="seating" v-if="flight.airplane">
-      <div class="planeRow" v-for="row in flight.airplane.rows">
+      <div class="planeRow" v-for="row in flight.airplane.rows" :key="row">
         {{ row }}
         <div class="seat"
              v-bind:class="[seatStatus(row, col), selectedSeat(row, col)]"
@@ -28,6 +34,7 @@
 
 <script>
   import axios from 'axios';
+  import ajax from '@/lib/ajax';
   import ReservationConfirm from '@/components/ReservationConfirm.vue';
 
   const FAKE_CURRENT_USER_ID = 13;  // TODO: implement login system with knock/jwt
@@ -38,11 +45,13 @@
     components: {
       ReservationConfirm  // FlightDetails will render this one as a child
     },
+
     data() {
       return {
         flight: {},
         reservations: {},
         user_reservations: {},
+        showConfirmationMessage: {},
         seat: {
           row: 0,
           col: 0
@@ -50,17 +59,30 @@
         userID: FAKE_CURRENT_USER_ID
       };
     },
+
     mounted() {
-      // Load the details for this flight ID
-      axios.get(`http://localhost:3000/flights/${this.id}`)
-        .then(res => {
-          this.flight = res.data.flight;
-          this.reservations = res.data.reservations;
-          this.user_reservations = res.data.user_reservations;
-        })
-        .catch(err => console.log(err));
+      this.getFlightDetails();  // Load initial data
+      window.setInterval(this.getFlightDetails, 2000);  // Poll the server to show live reservation updates
     },
+
     methods: {
+      getFlightDetails() {
+        // Load the details for this flight ID
+        // axios.get(`http://localhost:3000/flights/${this.id}`)
+        //   .then(res => {
+        //     this.flight = res.data.flight;
+        //     this.reservations = res.data.reservations;
+        //     this.user_reservations = res.data.user_reservations;
+        //   })
+        //   .catch(err => console.log(err));
+        ajax.getFlightDetails(this.id)
+          .then(res => {
+              this.flight = res.data.flight;
+              this.reservations = res.data.reservations;
+              this.user_reservations = res.data.user_reservations;
+            })
+            .catch(err => console.log(err));
+      },
       seatStatus(row, col) {
         // Loop over the reservations for this flight, and return an 'occupied' class name
         // if we find this row + col as a reservation; otherwise return 'free'
@@ -112,6 +134,7 @@
         // this.seat.row = row;
         // this.seat.col = col;
         this.seat = { row, col };
+        this.showConfirmationMessage = {};  // Stop the previous confirmation message from appearing
       },
       selectedSeat(row, col) {
         return (row  === this.seat.row && col === this.seat.col) && 'selected';
@@ -130,6 +153,8 @@
         // from appearing, and stop the selected
         // seat from appearing green
         this.seat = { row: 0, col: 0 };
+
+        this.showConfirmationMessage = {row: reservation.row, col: reservation.col};
 
       }
     },
@@ -170,7 +195,11 @@
     pointer-events: none;
   }
 
-
+  .confirmationMessage {
+    margin: 20px;
+    font-weight: bold;
+    color: orange;
+  }
 
   .free {
     cursor: pointer;

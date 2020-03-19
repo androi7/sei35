@@ -1,0 +1,16 @@
+<%# the build method returns a new object of the collection type %>
+<%# the array is used for namespacing to build a nested route, such as /articles/1/comments %>
+<%= form_with(model: [ @article, @article.comments.build ],
+              local: true) do |form| %>
+  <p>
+    <%= form.label :commenter %>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

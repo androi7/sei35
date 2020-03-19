@@ -1,0 +1,12 @@
+<!-- Should be made as partial file! -->
+
+<h2>Edit Mixtape</h2>
+
+<%= form_for @mixtape do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+
+<% end %>

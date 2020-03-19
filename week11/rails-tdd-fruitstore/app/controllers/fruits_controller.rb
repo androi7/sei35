@@ -9,6 +9,10 @@ class FruitsController < ApplicationController
     end
   end # index
 
+  def search
+    @fruits = Fruit.where name: params[:name]
+  end
+
 
   def create
 

@@ -39,20 +39,20 @@ end
 
 
 # DRY up our routes by creating a reusable DB query function
-def db_query( sql )
-
-  db = SQLite3::Database.new 'database.db'
-  db.results_as_hash = true # return normally as nested array, now each inner array as a hash
-  # Debugging output in the terminal
-  puts '======================='
-  puts sql
-  puts '======================='
-  results = db.execute sql
-  db.close
-
-  results  # return the result of the query
-
-end
+# def db_query( sql )
+#
+#   db = SQLite3::Database.new 'database.db'
+#   db.results_as_hash = true # return normally as nested array, now each inner array as a hash
+#   # Debugging output in the terminal
+#   puts '======================='
+#   puts sql
+#   puts '======================='
+#   results = db.execute sql
+#   db.close
+#
+#   results  # return the result of the query
+#
+# end
 
 # Home page
 get '/' do

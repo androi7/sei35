@@ -4,6 +4,7 @@ class DashboardController < ApplicationController
 
   def dogs_index
     # AJAX version ONLY
+    headers['Access-Control-Allow-Origin'] = '*'
     render json: Dog.all
   end
 

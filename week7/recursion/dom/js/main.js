@@ -20,6 +20,8 @@
 //
 // traverseDOM(document.body);
 
+
+// D.A.G (directed acyclic graph)
 const traverseDOM = node => {
   let nodesToVisit = [...node.chilren]; // Array.from(nodes.children)
   console.log(nodesToVisit, typeof nodesToVisit);

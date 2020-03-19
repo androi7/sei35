@@ -1,5 +1,5 @@
-console.log('hello!');
-console.log(jQuery);
+// console.log('hello!');
+// console.log(jQuery);
 
 let hue = 0; // our hue increment counter
 let lastX = 0; // keep track of the last mouse X position
@@ -62,7 +62,7 @@ $(document).ready(function() {
     }
 
 
-  }); // .on('click')
+  }); // .on('mousemove')
 
   // Clear the screen on spacebar press
   $(document).on('keypress', function(event) {

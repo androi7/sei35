@@ -39,13 +39,13 @@ post '/animals' do
 
   sql = "INSERT INTO animals (name, species, description, roundness, alive, age, image_url)
     VALUES (
-      '#{params[:name]}',
-      '#{params['species']}',
-      '#{params[:description]}',
+      #{params[:name]},
+      #{params['species']},
+      #{params[:description]},
       #{params[:roundness]},
       #{params[:alive]},
       #{params[:age]},
-      '#{params[:image_url]}'
+      #{params[:image_url]}
     );"
 
     # execute
@@ -98,13 +98,13 @@ end
 post '/animals/:id' do
 
   sql = "UPDATE animals SET
-      name = '#{params[:name]}',
-      species = '#{params['species']}',
-      description = '#{params[:description]}',
+      name = #{params[:name]},
+      species = #{params['species']},
+      description = #{params[:description]},
       roundness = #{params[:roundness]},
       alive = #{params[:alive]},
       age = #{params[:age]},
-      image_url = '#{params[:image_url]}'
+      image_url = #{params[:image_url]}
     WHERE id = #{params[:id]};"
 
     # execute the query and ignore the result

@@ -28,7 +28,7 @@ end
 get "/luckynumber" do
   @number = rand 100
   # This is the last line of the block, so this is what the browser gets
-  # "Your lucky number was: #{ number }"
+  # "Your lucky number is: #{ number }"
 
   erb :lucky
 

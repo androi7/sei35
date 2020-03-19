@@ -33,6 +33,7 @@
 
 <script>
   import axios from 'axios';
+  import ajax from '@/lib/ajax';
 
   export default {
     name: 'FlightSearchResults',
@@ -50,7 +51,10 @@
       // const destination = this.$route.params.destination;
       // const { origin, destination } = this.$route.params;  // ES6 object destructuring
 
-      axios.get(`http://localhost:3000/flights/search/${this.origin}/${this.destination}`)
+      // axios.get(`http://localhost:3000/flights/search/${this.origin}/${this.destination}`)
+      //   .then(res => this.flights = res.data)
+      //   .catch(err => console.warn('Flight search AJAX error:', err));
+      ajax.getFlightSearchResults(this.origin, this.destination)
         .then(res => this.flights = res.data)
         .catch(err => console.warn('Flight search AJAX error:', err));
     },

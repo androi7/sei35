@@ -18,7 +18,7 @@ VALUES (
     'Josh',
     'turkey',
     'http://www.placebear.com/300/200',
-    0,  -- this is a boolean 'true'
+    0,  -- this is a boolean 'false'
     20
 );
 

@@ -1,0 +1,2233 @@
+Started GET "/" for ::1 at 2020-01-29 10:52:00 +1100
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateSecrets (20200128235142)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "secrets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200128235142_create_secrets.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200128235142"]]
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-28 23:52:12.596670"], ["updated_at", "2020-01-28 23:52:12.596670"]]
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Started GET "/" for ::1 at 2020-01-29 10:54:10 +1100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gabriel/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Started GET "/" for ::1 at 2020-01-29 10:55:23 +1100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/content" for ::1 at 2020-01-29 10:55:57 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/content"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/secrets" for ::1 at 2020-01-29 10:56:13 +1100
+Processing by SecretsController#index as HTML
+  Rendering secrets/index.html.erb within layouts/application
+  [1m[36mSecret Load (0.5ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.html.erb:14
+  Rendered secrets/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 709ms (Views: 704.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/secrets/new" for ::1 at 2020-01-29 10:56:16 +1100
+Processing by SecretsController#new as HTML
+  Rendering secrets/new.html.erb within layouts/application
+  Rendered secrets/_form.html.erb (14.3ms)
+  Rendered secrets/new.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 31ms (Views: 24.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/secrets" for ::1 at 2020-01-29 10:56:18 +1100
+Processing by SecretsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VwhyZGDEGI7PplfiymDQBOFSpnMd4dd3ndjyyh9CuVYt67hpA7hdTvKJQgm/GFNm7Ei9QQ1rfz6VAQ4plwfO/A==", "secret"=>{"content"=>"dfad"}, "commit"=>"Create Secret"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/secrets_controller.rb:30
+  [1m[36mSecret Create (1.1ms)[0m  [1m[32mINSERT INTO "secrets" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "dfad"], ["created_at", "2020-01-28 23:56:18.638046"], ["updated_at", "2020-01-28 23:56:18.638046"]]
+  ↳ app/controllers/secrets_controller.rb:30
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/secrets_controller.rb:30
+Redirected to http://localhost:3000/secrets/1
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/secrets/1" for ::1 at 2020-01-29 10:56:18 +1100
+Processing by SecretsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSecret Load (0.4ms)[0m  [1m[34mSELECT  "secrets".* FROM "secrets" WHERE "secrets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secrets_controller.rb:67
+  Rendering secrets/show.html.erb within layouts/application
+  Rendered secrets/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 29ms (Views: 19.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/secrets/1/edit" for ::1 at 2020-01-29 10:56:21 +1100
+Processing by SecretsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSecret Load (0.4ms)[0m  [1m[34mSELECT  "secrets".* FROM "secrets" WHERE "secrets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secrets_controller.rb:67
+  Rendering secrets/edit.html.erb within layouts/application
+  Rendered secrets/_form.html.erb (2.0ms)
+  Rendered secrets/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 20ms (Views: 14.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/secrets" for ::1 at 2020-01-29 10:56:25 +1100
+Processing by SecretsController#index as HTML
+  Rendering secrets/index.html.erb within layouts/application
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.html.erb:14
+  Rendered secrets/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 10:56:33 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/index.json.jbuilder (2.7ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets/1" for ::1 at 2020-01-29 10:56:39 +1100
+Processing by SecretsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSecret Load (0.6ms)[0m  [1m[34mSELECT  "secrets".* FROM "secrets" WHERE "secrets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secrets_controller.rb:67
+  Rendering secrets/show.html.erb within layouts/application
+  Rendered secrets/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/secrets" for ::1 at 2020-01-29 10:56:40 +1100
+Processing by SecretsController#index as HTML
+  Rendering secrets/index.html.erb within layouts/application
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.html.erb:14
+  Rendered secrets/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets/new" for ::1 at 2020-01-29 10:56:41 +1100
+Processing by SecretsController#new as HTML
+  Rendering secrets/new.html.erb within layouts/application
+  Rendered secrets/_form.html.erb (2.2ms)
+  Rendered secrets/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/secrets" for ::1 at 2020-01-29 10:56:49 +1100
+Processing by SecretsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LzEKX7XSsgxv+dzHkM0HF3EtJZYpxhDO8Z5RrOcRfYxV0sBS1q73zFLWySzltYR1fDc+pDlMuIf5R61Pb1QKJg==", "secret"=>{"content"=>"Luv 2 steal cars."}, "commit"=>"Create Secret"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/secrets_controller.rb:30
+  [1m[36mSecret Create (0.6ms)[0m  [1m[32mINSERT INTO "secrets" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Luv 2 steal cars."], ["created_at", "2020-01-28 23:56:49.680517"], ["updated_at", "2020-01-28 23:56:49.680517"]]
+  ↳ app/controllers/secrets_controller.rb:30
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/secrets_controller.rb:30
+Redirected to http://localhost:3000/secrets/2
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/secrets/2" for ::1 at 2020-01-29 10:56:49 +1100
+Processing by SecretsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT  "secrets".* FROM "secrets" WHERE "secrets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/secrets_controller.rb:67
+  Rendering secrets/show.html.erb within layouts/application
+  Rendered secrets/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets" for ::1 at 2020-01-29 10:56:51 +1100
+Processing by SecretsController#index as HTML
+  Rendering secrets/index.html.erb within layouts/application
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.html.erb:14
+  Rendered secrets/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets" for ::1 at 2020-01-29 11:11:24 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by SecretsController#index as HTML
+  Rendering secrets/index.html.erb within layouts/application
+  [1m[36mSecret Load (0.5ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.html.erb:14
+  Rendered secrets/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 215ms (Views: 209.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/secrets" for ::1 at 2020-01-29 11:13:46 +1100
+Processing by SecretsController#index as HTML
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `header' for #<SecretsController:0x00007f84cb486f28>
+Did you mean?  headers
+               head):
+  
+app/controllers/secrets_controller.rb:8:in `index'
+Started GET "/secrets" for ::1 at 2020-01-29 11:14:10 +1100
+Processing by SecretsController#index as HTML
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `header' for #<SecretsController:0x00007f84cacd3510>
+Did you mean?  headers
+               head):
+  
+app/controllers/secrets_controller.rb:8:in `index'
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:14:34 +1100
+Processing by SecretsController#index as JSON
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `header' for #<SecretsController:0x00007f84cac94f68>
+Did you mean?  headers
+               head):
+  
+app/controllers/secrets_controller.rb:8:in `index'
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:15:10 +1100
+Processing by SecretsController#index as JSON
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `header' for #<SecretsController:0x00007f84d09b9c98>
+Did you mean?  headers
+               head):
+  
+app/controllers/secrets_controller.rb:8:in `index'
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:15:38 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.5ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (1.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/index.json.jbuilder (15.6ms)
+Completed 200 OK in 26ms (Views: 18.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:15:50 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.3ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.8ms)
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/index.json.jbuilder (12.0ms)
+Completed 200 OK in 19ms (Views: 14.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:20:15 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (8.9ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:22:26 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/index.json.jbuilder (3.9ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets/new" for ::1 at 2020-01-29 11:22:45 +1100
+Processing by SecretsController#new as HTML
+  Rendering secrets/new.html.erb within layouts/application
+  Rendered secrets/_form.html.erb (15.8ms)
+  Rendered secrets/new.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/secrets" for ::1 at 2020-01-29 11:22:50 +1100
+Processing by SecretsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sSFUB5U3WwbBTppnxSVKD9jj5f7KGSXUX1X+OCREdWrLwp4K9ksexvxhj4ywXclt1fn+zNqTjZ1XjALbrAECwA==", "secret"=>{"content"=>"I eat glue"}, "commit"=>"Create Secret"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/secrets_controller.rb:30
+  [1m[36mSecret Create (2.8ms)[0m  [1m[32mINSERT INTO "secrets" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "I eat glue"], ["created_at", "2020-01-29 00:22:50.604676"], ["updated_at", "2020-01-29 00:22:50.604676"]]
+  ↳ app/controllers/secrets_controller.rb:30
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/secrets_controller.rb:30
+Redirected to http://localhost:3000/secrets/3
+Completed 302 Found in 8ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/secrets/3" for ::1 at 2020-01-29 11:22:50 +1100
+Processing by SecretsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT  "secrets".* FROM "secrets" WHERE "secrets"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/secrets_controller.rb:67
+  Rendering secrets/show.html.erb within layouts/application
+  Rendered secrets/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets" for ::1 at 2020-01-29 11:22:51 +1100
+Processing by SecretsController#index as HTML
+  Rendering secrets/index.html.erb within layouts/application
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.html.erb:14
+  Rendered secrets/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:23:05 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.9ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (4.7ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:23:39 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (1.1ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/index.json.jbuilder (5.9ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:24:30 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (4.5ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:25:06 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (3.9ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets/new" for ::1 at 2020-01-29 11:26:29 +1100
+Processing by SecretsController#new as HTML
+  Rendering secrets/new.html.erb within layouts/application
+  Rendered secrets/_form.html.erb (1.9ms)
+  Rendered secrets/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/secrets" for ::1 at 2020-01-29 11:26:42 +1100
+Processing by SecretsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YIl2NDFuQiPaC8gpuBrgaMYvlGEZn3jWq6wv98+s0sMaarw5UhIH4+ck3cLNYmMKyzWPUwkV0J+jddMUR+mlaQ==", "secret"=>{"content"=>"I am a teenage vampire\r\n"}, "commit"=>"Create Secret"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/secrets_controller.rb:30
+  [1m[36mSecret Create (0.6ms)[0m  [1m[32mINSERT INTO "secrets" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "I am a teenage vampire\r\n"], ["created_at", "2020-01-29 00:26:42.198169"], ["updated_at", "2020-01-29 00:26:42.198169"]]
+  ↳ app/controllers/secrets_controller.rb:30
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/secrets_controller.rb:30
+Redirected to http://localhost:3000/secrets/4
+Completed 302 Found in 5ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/secrets/4" for ::1 at 2020-01-29 11:26:42 +1100
+Processing by SecretsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT  "secrets".* FROM "secrets" WHERE "secrets"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/secrets_controller.rb:67
+  Rendering secrets/show.html.erb within layouts/application
+  Rendered secrets/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets" for ::1 at 2020-01-29 11:26:43 +1100
+Processing by SecretsController#index as HTML
+  Rendering secrets/index.html.erb within layouts/application
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.html.erb:14
+  Rendered secrets/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:26:45 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.9ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/index.json.jbuilder (7.7ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:45:39 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.5ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.1ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:47:01 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (5.4ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:47:08 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.9ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (5.9ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:48:01 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.9ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/index.json.jbuilder (5.7ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:48:42 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.8ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (5.8ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:50:22 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (5.6ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:51:59 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.1ms)
+  Rendered secrets/index.json.jbuilder (4.6ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:54:50 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.8ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (5.3ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:55:14 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/index.json.jbuilder (5.7ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 11:58:54 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (4.4ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+
+
+Started OPTIONS "/secrets.json" for ::1 at 2020-01-29 11:59:02 +1100
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/secrets.json"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:05:53 +1100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.4ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (1.0ms)
+  Rendered secrets/_secret.json.jbuilder (0.1ms)
+  Rendered secrets/_secret.json.jbuilder (0.1ms)
+  Rendered secrets/_secret.json.jbuilder (0.1ms)
+  Rendered secrets/index.json.jbuilder (10.3ms)
+Completed 200 OK in 18ms (Views: 13.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/secrets.json" for ::1 at 2020-01-29 12:05:57 +1100
+Processing by SecretsController#create as JSON
+  Parameters: {"content"=>"hi mummy", "secret"=>{"content"=>"hi mummy"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.4.1) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.4.1) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.4.1) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:07:34 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.6ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (2.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/index.json.jbuilder (19.3ms)
+Completed 200 OK in 29ms (Views: 21.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/secrets.json" for ::1 at 2020-01-29 12:07:43 +1100
+Processing by SecretsController#create as JSON
+  Parameters: {"content"=>"hi mummy!", "secret"=>{"content"=>"hi mummy!"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.4.1) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.4.1) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.4.1) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:07:55 +1100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/_secret.json.jbuilder (0.1ms)
+  Rendered secrets/_secret.json.jbuilder (0.1ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (8.1ms)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/secrets.json" for ::1 at 2020-01-29 12:08:00 +1100
+Processing by SecretsController#create as JSON
+  Parameters: {"content"=>"hi mummy!", "secret"=>{"content"=>"hi mummy!"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.4.1) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.4.1) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.4.1) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/secrets.json" for ::1 at 2020-01-29 12:09:21 +1100
+Processing by SecretsController#create as JSON
+  Parameters: {"content"=>"hi mummy!", "secret"=>{"content"=>"hi mummy!"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/secrets_controller.rb:33
+  [1m[36mSecret Create (2.5ms)[0m  [1m[32mINSERT INTO "secrets" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "hi mummy!"], ["created_at", "2020-01-29 01:09:21.938886"], ["updated_at", "2020-01-29 01:09:21.938886"]]
+  ↳ app/controllers/secrets_controller.rb:33
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/secrets_controller.rb:33
+  Rendering secrets/show.json.jbuilder
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/show.json.jbuilder (1.9ms)
+Completed 201 Created in 14ms (Views: 4.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/secrets" for ::1 at 2020-01-29 12:09:29 +1100
+Processing by SecretsController#index as HTML
+  Rendering secrets/index.html.erb within layouts/application
+  [1m[36mSecret Load (0.3ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.html.erb:14
+  Rendered secrets/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 179ms (Views: 177.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:24:29 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.5ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.5ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:24:34 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.8ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (6.9ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:24:39 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (5.9ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:24:44 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.1ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:24:49 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.2ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:24:54 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.4ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:24:59 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.1ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:25:04 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.5ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:25:09 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.2ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:25:14 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.3ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:25:19 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.2ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:25:24 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.8ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.4ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:25:29 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.8ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.4ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:25:34 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.4ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:25:39 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (6.3ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:25:44 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.7ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:25:49 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.3ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:25:54 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.3ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:26:01 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.2ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:26:05 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.1ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.1ms)
+  Rendered secrets/index.json.jbuilder (4.5ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:26:10 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (1.0ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.9ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:26:16 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.2ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:26:20 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.8ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.4ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:26:25 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.3ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:26:31 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.4ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:26:35 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.2ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:26:40 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.0ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:26:46 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.1ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:26:50 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (5.8ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:26:55 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.3ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:27:01 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.3ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:27:05 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.9ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (17.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (23.8ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:27:10 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (6.3ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:27:16 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.2ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:27:20 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (6.3ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:27:25 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.2ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:27:31 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (6.5ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:27:35 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.0ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:27:40 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (5.9ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:27:46 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (6.4ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:27:50 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.1ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:27:55 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (6.3ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:28:01 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.1ms)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:28:05 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.2ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:28:10 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.0ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:28:16 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.8ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.6ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:28:20 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (6.2ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:28:25 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.5ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:28:31 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (6.1ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:28:35 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.3ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:28:40 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.4ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:28:46 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.3ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-01-29 12:28:50 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.8ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (6.9ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/static/js/bundle.js.map" for ::1 at 2020-02-23 22:05:35 +1100
+Started GET "/static/js/main.chunk.js.map" for ::1 at 2020-02-23 22:05:35 +1100
+Started GET "/static/js/0.chunk.js.map" for ::1 at 2020-02-23 22:05:35 +1100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  ↳ /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+ActionController::RoutingError (No route matches [GET] "/static/js/bundle.js.map"):
+  ↳ /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+  
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+ActionController::RoutingError (No route matches [GET] "/static/js/0.chunk.js.map"):
+ActionController::RoutingError (No route matches [GET] "/static/js/main.chunk.js.map"):
+  
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-02-23 22:05:45 +1100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-23 22:06:09 +1100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-23 22:06:11 +1100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-23 22:06:14 +1100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:11:34 +1100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gabriel/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.5ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (2.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (15.9ms)
+Completed 200 OK in 29ms (Views: 22.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:11:38 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.1ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (4.8ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/secrets.json" for ::1 at 2020-02-23 22:11:40 +1100
+Processing by SecretsController#create as JSON
+  Parameters: {"content"=>"hello", "secret"=>{"content"=>"hello"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/secrets_controller.rb:33
+  [1m[36mSecret Create (1.6ms)[0m  [1m[32mINSERT INTO "secrets" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "hello"], ["created_at", "2020-02-23 11:11:40.112444"], ["updated_at", "2020-02-23 11:11:40.112444"]]
+  ↳ app/controllers/secrets_controller.rb:33
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/secrets_controller.rb:33
+  Rendering secrets/show.json.jbuilder
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/show.json.jbuilder (1.4ms)
+Completed 201 Created in 14ms (Views: 4.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:11:43 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (1.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (9.4ms)
+Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:11:48 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.3ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.9ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (12.7ms)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:11:53 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.3ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.9ms)
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (12.4ms)
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:11:58 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.4ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (9.1ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:12:03 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/index.json.jbuilder (9.6ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:12:08 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (1.1ms)
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (10.8ms)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:12:13 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (9.4ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:12:18 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.4ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (1.1ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/_secret.json.jbuilder (0.9ms)
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/index.json.jbuilder (12.1ms)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:12:23 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.1ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (5.8ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:12:28 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (7.7ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:12:33 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/index.json.jbuilder (9.9ms)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:12:38 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (7.1ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:12:43 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (8.3ms)
+Completed 200 OK in 18ms (Views: 10.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:12:48 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.5ms)
+  Rendered secrets/index.json.jbuilder (9.3ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:12:53 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/index.json.jbuilder (8.0ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:12:58 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.1ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (7.4ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:13:03 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.9ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/index.json.jbuilder (8.8ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:13:08 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.6ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (6.5ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:13:13 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (8.0ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:13:18 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.8ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (7.6ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:13:23 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (7.7ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:13:28 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/index.json.jbuilder (7.3ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for ::1 at 2020-02-23 22:13:33 +1100
+Processing by SecretsController#index as JSON
+  Rendering secrets/index.json.jbuilder
+  [1m[36mSecret Load (0.2ms)[0m  [1m[34mSELECT "secrets".* FROM "secrets"[0m
+  ↳ app/views/secrets/index.json.jbuilder:1
+  Rendered secrets/_secret.json.jbuilder (0.7ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.2ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.4ms)
+  Rendered secrets/_secret.json.jbuilder (0.3ms)
+  Rendered secrets/index.json.jbuilder (8.2ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.2ms)
+
+

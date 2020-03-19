@@ -85,7 +85,7 @@ class SinglyLinkedList
     node_inserted = Node.new value
     node.next = node_inserted
     node_inserted.next = node_after
-    node_inserted 
+    node_inserted
   end
 
   def find( needle )
@@ -104,7 +104,7 @@ class SinglyLinkedList
     return @head if index == 0
     node = @head
     index.times do
-      node = node.next 
+      node = node.next
       return node if node
     end
     node = -1
@@ -113,7 +113,13 @@ class SinglyLinkedList
   def reverse
     # return a reversed version of the list
     new_list = Node.new @head
-    
+    node = @head
+    while node.next
+      new_list.prepend node.next
+      node = node.next
+    end
+    new_list
+
   end
 
   def reverse!

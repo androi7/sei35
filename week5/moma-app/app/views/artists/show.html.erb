@@ -19,8 +19,8 @@
   <ul>
     <% @artist.works.each do |work| %>
       <li>
-        <a href="<%= work_path(work.id) %>">
-        <%= image_tag work.image, alt: work.title %>
+        <%# <a href="<%= work_path(work.id) %>"> %>
+        <%= link_to image_tag(work.image, alt: work.title), work_path(work.id) %>
         <!-- </a> -->
       </li>
     <% end %>

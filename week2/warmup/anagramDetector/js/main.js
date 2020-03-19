@@ -3,8 +3,9 @@ const anagramArray = ["enlists", "google", "inlets", "banana", 'netsil'];
 
 const detector = {
   anagramList: [],
-  anagramDetector: function(word, list) {
-    for (let elem of anagramArray) {
+  anagramDetector: function(word, list=anagramArray) {
+    this.anagramList.length = 0;
+    for (let elem of list) {
       let newElem = elem.toLowerCase().split('');
       for (let letter of word) {
         if (newElem.includes(letter.toLowerCase())) {
@@ -13,7 +14,7 @@ const detector = {
           break;
         }
       }
-      newElem.length === 0 ? this.anagramList.push(elem) : null;
+      newElem.length === 0 && this.anagramList.push(elem);
     }
     return this.anagramList;
   }
